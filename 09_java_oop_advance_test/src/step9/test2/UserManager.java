@@ -22,9 +22,28 @@ public class UserManager {
 	void printAllUser() {
 		
 		for (int i = 0; i < userCnt; i++) {
-			
+			System.out.print((i+1) + ".ID(" + userlist[i].id + ")\tPW(" + userlist[i].pw + ")\t");
+			if (userlist[i].accCnt != 0) {
+				for (int j = 0; j < userlist[i].accCnt; j++) {
+					System.out.print("(" + userlist[i].acc[j].accNumber + ":" + userlist[i].acc[j].money + ")");
+				}
+			}
+			System.out.println();
 		}
+	}
 		
+	
+	
+	boolean getCheckAcc(String account) {
+		
+		for (int i = 0; i < userCnt; i++) {
+			for (int j = 0; j < userlist[i].accCnt; j++) {
+				if (account.equals(userlist[i].acc[j].accNumber)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 	
 	boolean isDupleId (String id) {
@@ -92,5 +111,21 @@ public class UserManager {
 		return identifier;
 		
 	}
+	
+	void deleteMember (int identifier) {
+		
+		User[] temp = userlist;
+		userlist = new User[userCnt-1];
+		
+		for (int i = 0; i < identifier; i++) {
+			userlist[i] = temp[i];
+		}
+		for (int i = identifier; i < userCnt - 1; i ++) {
+			userlist[i] = temp[i+1];
+		}
+		
+		System.out.println("[메세지]탈퇴되었습니다.");
+	}
+
 
 }

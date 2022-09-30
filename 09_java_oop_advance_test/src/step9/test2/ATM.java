@@ -11,6 +11,8 @@ public class ATM {
 	
 	void play() {
 		
+		
+		FileManager
 		um.printAllUser();
 		
 		
@@ -44,12 +46,23 @@ public class ATM {
 			AccountManager am = AccountManager.getInstance(); 
 			
 			if (sel == 1) {
-				
 				am.creatAcc(identifier);
-				
-				
 			}
 			
+			else if (sel == 2) {
+				am.deleteAcc(identifier);
+			}
+			else if (sel == 3) {
+				am.printAcc(identifier);
+			}
+			else if (sel == 4) {
+				um.deleteMember(identifier);
+			}
+			else if (sel == 0) {
+				identifier = -1;
+				System.out.println("로그아웃 되었습니다.");
+				break;
+			}
 		}
 		
 	}
