@@ -12,7 +12,7 @@ public class ATM {
 	void play() {
 		
 		
-		FileManager
+		FileManager.getInstance().load();
 		um.printAllUser();
 		
 		

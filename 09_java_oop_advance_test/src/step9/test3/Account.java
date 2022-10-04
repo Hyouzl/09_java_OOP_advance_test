@@ -1,8 +1,8 @@
-package step9.test2;
+package step9.test3;
 
 public class Account {
-
-	String accNumber;
+	
+	String accNum;
 	int money;
 
 }
