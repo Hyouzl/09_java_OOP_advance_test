@@ -23,7 +23,7 @@ public class ATM {
 				
 				
 				if (sel == 1) {
-					um.getInstance().
+					um.getInstance().joinMember();
 				}
 				
 				

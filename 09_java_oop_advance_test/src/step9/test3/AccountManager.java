@@ -10,7 +10,7 @@ public class AccountManager {
 		return instance;
 	}
 	
-	UserManager um = new UserManager();
+	UserManager um;
 	
 	void CreatAcc() {
 		
